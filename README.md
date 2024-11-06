@@ -57,8 +57,8 @@ The main application component that connects to the Redux store and handles the 
 
 1. **Clone the repository**:
     ```sh
-    git clone <repository-url>
-    cd adminfront
+    git clone https://github.com/hadjalimazen/React-Application-Setup-template.git
+    cd React-Application-Setup-template
     ```
 
 2. **Install dependencies**:
