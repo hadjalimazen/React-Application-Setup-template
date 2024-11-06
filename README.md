@@ -26,7 +26,7 @@ Contains the Redux store configuration.
 Contains the Redux reducers.
 
 - **index.js**: Combines all reducers.
-- **counter.reducer.js**: Manages the state for the counter.
+- **counter.reducer.js**: Manages the state for the counter example.
 
 ### `src/pages`
 
@@ -68,11 +68,11 @@ The main application component that connects to the Redux store and handles the 
 
 3. **Run the project**:
     ```sh
-    npm start
+    npm run dev
     ```
 
 4. **Open the application**:
-    Open your browser and navigate to `http://localhost:3000`.
+    Open your browser and navigate to `http://localhost:5173`.
 
 ## Explanation of Template Parts
 
