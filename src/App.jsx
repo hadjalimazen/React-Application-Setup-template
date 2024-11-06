@@ -1,20 +1,32 @@
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
+import React from "react";
+import { Link } from 'react-router-dom';
 
 function App({ counter, increment, decrement }) {
 
   const { t, i18n: { language, changeLanguage } } = useTranslation();
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="text-4xl font-bold">{counter}</div>
-      <div className="flex flex-col ml-5">
-        <button className="bg-green-500 text-white px-4 py-2 rounded" onClick={increment}>{ t('inc') }</button>
-        <button className="bg-red-500 text-white px-4 py-2 rounded mt-2" onClick={decrement}>{ t('dec') }</button>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded mt-2" onClick={() => changeLanguage(language === "en" ? "fr" : "en")}>{t('a')}</button>
+    <React.Fragment>
+      <header className="sticky top-0 bg-white shadow-md p-4">
+        <nav className="flex justify-center gap-5 flex-wrap">
+          <Link to="/dashboard" className="text-blue-500 mx-1 font-bold hover:scale-110">Dashboard</Link>
+          <Link to="/login" className="text-blue-500 mx-1 font-bold hover:scale-110">Login</Link>
+          <Link to="/notfound" className="text-blue-500 mx-1 font-bold hover:scale-110">NotFound</Link>
+          <Link to="/apitest" className="text-blue-500 mx-1 font-bold hover:scale-110">ApiTest</Link>
+        </nav>
+      </header>
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-4xl font-bold">{counter}</div>
+        <div className="flex flex-col ml-5">
+          <button className="bg-green-500 text-white px-4 py-2 rounded" onClick={increment}>{t('inc')}</button>
+          <button className="bg-red-500 text-white px-4 py-2 rounded mt-2" onClick={decrement}>{t('dec')}</button>
+          <button className="bg-blue-500 text-white px-4 py-2 rounded mt-2" onClick={() => changeLanguage(language === "en" ? "fr" : "en")}>{t('a')}</button>
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
