@@ -38,6 +38,9 @@ const router = createBrowserRouter([
         path: PROFILE,
         element: <h1>profile page</h1>,
       },
+
+      // adding sub routes here for dashboard page layout...
+      
     ],
   },
 

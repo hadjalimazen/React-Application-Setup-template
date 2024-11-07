@@ -83,4 +83,96 @@ The main application component that connects to the Redux store and handles the 
 - **Components**: The `src/components/atoms` directory contains small, reusable components like `StyledLogo.jsx`.
 - **Main Application**: The `src/App.jsx` file is the main application component that connects to the Redux store and handles the counter functionality.
 
+## Declaring Layout and Adding Subpages
+
+To declare a layout and add subpages, you can use the `react-router-dom` library to define nested routes. For example, you can create a `Dashboard` layout with subpages like `Overview` and `Profile`.
+
+### Example
+
+1. **Define the routes in `src/main.jsx`**:
+
+    ```jsx
+    import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+    import Dashboard from './dashboard';
+    import Overview from './pages/dashboard/overview';
+    import Profile from './pages/dashboard/profile';
+
+    const router = createBrowserRouter([
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
+        children: [
+          {
+            path: 'overview',
+            element: <Overview />,
+          },
+          {
+            path: 'profile',
+            element: <Profile />,
+          },
+        ],
+      },
+      // other routes...
+    ]);
+
+    createRoot(document.getElementById('root')).render(
+      <StrictMode>
+        <RouterProvider router={router} />
+      </StrictMode>,
+    );
+    ```
+
+2. **Create the `Dashboard` layout in `src/dashboard/index.jsx`**:
+
+    ```jsx
+    import React from 'react';
+    import { Outlet } from 'react-router-dom';
+    import Aside from './aside';
+    import Nav from './nav';
+
+    function Dashboard() {
+      return (
+        <div className="min-h-screen bg-gray-50/50">
+          <Aside />
+          <div className="p-4 xl:ml-80">
+            <Nav />
+            <div className="mt-12">
+              <Outlet />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    export default Dashboard;
+    ```
+
+3. **Create subpages like `Overview` and `Profile`**:
+
+    - `src/pages/dashboard/overview.jsx`:
+    
+        ```jsx
+        import React from 'react';
+
+        function Overview() {
+          return <h1>Overview Page</h1>;
+        }
+
+        export default Overview;
+        ```
+
+    - `src/pages/dashboard/profile.jsx`:
+    
+        ```jsx
+        import React from 'react';
+
+        function Profile() {
+          return <h1>Profile Page</h1>;
+        }
+
+        export default Profile;
+        ```
+
+By following these steps, you can create a layout with nested subpages in your React application.
+
 This template provides a basic structure for a React-based admin frontend with state management and internationalization support.
