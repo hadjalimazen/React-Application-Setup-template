@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import React from "react";
 import { Link } from 'react-router-dom';
+import { APITEST, DASHBOARD, LOGIN } from "./routingpaths";
 
 function App({ counter, increment, decrement }) {
 
@@ -12,10 +13,10 @@ function App({ counter, increment, decrement }) {
     <React.Fragment>
       <header className="sticky top-0 bg-white shadow-md p-4">
         <nav className="flex justify-center gap-5 flex-wrap">
-          <Link to="/dashboard" className="text-blue-500 mx-1 font-bold hover:scale-110">Dashboard</Link>
-          <Link to="/login" className="text-blue-500 mx-1 font-bold hover:scale-110">Login</Link>
-          <Link to="/notfound" className="text-blue-500 mx-1 font-bold hover:scale-110">NotFound</Link>
-          <Link to="/apitest" className="text-blue-500 mx-1 font-bold hover:scale-110">ApiTest</Link>
+          <Link to={DASHBOARD} className="text-blue-500 mx-1 font-bold hover:scale-110">Dashboard</Link>
+          <Link to={LOGIN} className="text-blue-500 mx-1 font-bold hover:scale-110">Login</Link>
+          <Link to={"98r4f84f"} className="text-blue-500 mx-1 font-bold hover:scale-110">NotFound</Link>
+          <Link to={APITEST} className="text-blue-500 mx-1 font-bold hover:scale-110">ApiTest</Link>
         </nav>
       </header>
       <div className="flex justify-center items-center h-screen">

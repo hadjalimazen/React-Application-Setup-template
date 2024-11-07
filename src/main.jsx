@@ -5,7 +5,7 @@ import App from 'src/App.jsx'
 import { Provider } from 'react-redux'
 import store from 'src/store/index.js'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { APITEST, DASHBOARD, HOME, LOGIN, OVERVIEW } from 'src/routingpaths.js'
+import { APITEST, DASHBOARD, HOME, LOGIN, OVERVIEW, PROFILE } from 'src/routingpaths.js'
 import Login from 'src/pages/login/index.jsx'
 import NotFoundPage from './pages/notfound'
 import './i18n/index.js'
@@ -33,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: OVERVIEW,
         element: <Overview />,
+      },
+      {
+        path: PROFILE,
+        element: <h1>profile page</h1>,
       },
     ],
   },
