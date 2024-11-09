@@ -5,6 +5,7 @@ import { Money01Icon,
     Archive01Icon,
     ArrowUpRight01Icon
  } from "hugeicons-react";
+import clsx from 'clsx';
 
 export default function Overview() {
 
@@ -12,7 +13,7 @@ export default function Overview() {
         {
             title: 'Cashflow',
             value: '100,000 TND',
-            color: 'blue',
+            color: 'yellow',
             icon: <Money01Icon />,
             description: 'Total cashflow',
             link: 'XX'
@@ -50,7 +51,7 @@ export default function Overview() {
                 {
                     cardsInfo.map((card, index) => (
                         <div key={index} className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-                            <div className={`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-${card.color}-600 to-${card.color}-400 text-white shadow-${card.color}-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center`}>
+                            <div className={clsx(`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-${card.color}-400 text-white shadow-${card.color}-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center`)}>
                                 {card.icon}
                             </div>
                             <div className="p-4 text-right">
