@@ -1,6 +1,8 @@
 // login page component
 import React from "react";
+import { Link } from "react-router-dom";
 import StyledLogo from "src/components/atoms/styledlogo";
+import { DASHBOARD } from "src/routingpaths";
 
 export default function Login() {
     return (
@@ -30,7 +32,7 @@ export default function Login() {
                                 <label htmlFor="remember" className="ml-2 block text-sm text-gray-700 ">Remember me</label>
                             </div>
                         </div>
-                        <button onClick='alert(" hello")' type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Login</button>
+                        <Link to={DASHBOARD} type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Login</Link>
                     </form>
                 </div>
             </div>
