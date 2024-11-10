@@ -13,7 +13,7 @@ export default function Overview() {
         {
             title: 'Cashflow',
             value: '100,000 TND',
-            color: 'yellow',
+            color: '[#6366f1]',
             icon: <Money01Icon />,
             description: 'Total cashflow',
             link: 'XX'
@@ -21,7 +21,7 @@ export default function Overview() {
         {
             title: 'users',
             value: 463,
-            color: 'blue',
+            color: '[#6366f1]',
             icon: <UserSquareIcon />,
             description: 'Total users',
             link: 'XX'
@@ -29,7 +29,7 @@ export default function Overview() {
         {
             title: 'new orders',
             value: 23,
-            color: 'green',
+            color: 'green-500',
             icon: <Archive01Icon />,
             description: 'Total new orders',
             link: 'XX'
@@ -37,7 +37,7 @@ export default function Overview() {
         {
             title: 'Growth',
             value: '20%',
-            color: 'orange',
+            color: 'orange-500',
             icon: <ArrowUpRight01Icon />,
             description: 'Total growth',
             link: 'XX'
@@ -51,7 +51,7 @@ export default function Overview() {
                 {
                     cardsInfo.map((card, index) => (
                         <div key={index} className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
-                            <div className={clsx(`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr from-blue-600 to-${card.color}-400 text-white shadow-${card.color}-500/40 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center`)}>
+                            <div className={clsx(`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gray-50 text-black shadow-blue-200 border border-blue-300 shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center`)}>
                                 {card.icon}
                             </div>
                             <div className="p-4 text-right">
@@ -59,8 +59,8 @@ export default function Overview() {
                                 <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">{card.value}</h4>
                             </div>
                             <div className="border-t border-blue-gray-50 p-4">
-                                <p className="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
-                                    <strong className="text-green-500">{card.title}</strong>
+                                <p className="block antialiased font-sans text-base leading-relaxed font-normal">
+                                    <strong className="text-blue-600">{card.title}</strong>
                                 </p>
                             </div>
                         </div>
