@@ -173,6 +173,18 @@ To declare a layout and add subpages, you can use the `react-router-dom` library
         export default Profile;
         ```
 
+### `variant` Prop in `ToastProvider`
+
+The `variant` prop in the `ToastProvider` component specifies the position of the toast notifications on the screen. It is passed to the `ToastContainer` component to determine where the toasts will appear.
+
+#### Definition
+
+In `ToastProvider.jsx`, the `variant` prop is defined as follows:
+
+            <ToastProvider>
+              <RouterProvider router={router} />
+            </ToastProvider>
+
 By following these steps, you can create a layout with nested subpages in your React application.
 
 This template provides a basic structure for a React-based admin frontend with state management and internationalization support.

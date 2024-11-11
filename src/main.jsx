@@ -12,6 +12,7 @@ import './i18n/index.js'
 import Dashboard from './dashboard'
 import Overview from './pages/dashboard/overview'
 import ApiTestPage from './pages/apitest'
+import ToastProvider from './toast/ToastProvider'
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
 
       // adding sub routes here for dashboard page layout...
-      
+
     ],
   },
 
@@ -53,6 +54,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ToastProvider>
+      <RouterProvider router={router} />
+    </ToastProvider>
   </StrictMode>,
 )

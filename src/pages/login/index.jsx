@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import StyledLogo from "src/components/atoms/styledlogo";
 import { DASHBOARD } from "src/routingpaths";
+import { useToast } from "src/toast/ToastProvider";
 
 export default function Login() {
 
@@ -18,6 +19,7 @@ export default function Login() {
     const rememberMeRef = useRef(null);
 
     const navigate = useNavigate();
+    const toast = useToast();
 
     // Handle form submission using refs
     const handleSubmit = (event) => {
@@ -32,6 +34,9 @@ export default function Login() {
         console.log("Email:", email);
         console.log("Password:", password);
         console.log("Remember Me:", rememberMe);
+
+        // Example: Show a toast message
+        toast.pushSuccess("Login successful!" , 10000);
 
         // For now, let's simulate a successful login by navigating to the dashboard
         navigate(DASHBOARD);
